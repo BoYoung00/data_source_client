@@ -42,20 +42,22 @@ export default function ProjectCardLayOut({data} ) {
 
     return (
         <div className={styles.cardLayOutBox}>
-            {data && data.length > 0 && data.map((item) => (
-                <CardUI
-                    item={item}
-                    key={item.id}
-                    name={item.name}
-                    comment={item.comment}
-                    projectID={item.id}
-                    dataBaseName={item.dataBaseName}
-                    setModalMessage = {setModalMessage}
-                    setIsDeleteModalOpen={setIsDeleteModalOpen}
-                    setIsFavoriteOpen={setIsFavoriteOpen}
-                    setItem = {setItem}
-                />
-            ))}
+            {data && data.length > 0 && data
+                .filter(item => item.isDelete !== 1)
+                .map((item) => (
+                    <CardUI
+                        item={item}
+                        key={item.id}
+                        name={item.name}
+                        comment={item.comment}
+                        projectID={item.id}
+                        dataBaseName={item.dataBaseName}
+                        setModalMessage={setModalMessage}
+                        setIsDeleteModalOpen={setIsDeleteModalOpen}
+                        setIsFavoriteOpen={setIsFavoriteOpen}
+                        setItem={setItem}
+                    />
+                ))}
 
             <ModalLayOut
                 data={item.name + `${modalMessage}`}
