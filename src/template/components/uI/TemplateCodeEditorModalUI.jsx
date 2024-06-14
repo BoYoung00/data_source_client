@@ -7,6 +7,7 @@ import {CardTemplateCode} from "../code/CardTemplateCode";
 import {BarTemplateCode} from "../code/BarTemplateCode";
 import {TreeTemplateCode} from "../code/TreeTemplateCode";
 import {TableTemplateCode} from "../code/TableTemplateCode";
+import {ListTemplateCode} from "../code/ListTemplateCode";
 
 export default function TemplateCodeEditorModalUI({ template , title , description , image , tableID}) {
     const [code, setCode] = useState('');
@@ -48,6 +49,9 @@ export default function TemplateCodeEditorModalUI({ template , title , descripti
                     break
                 case 'Table Template':
                     setCode(TableTemplateCode({ url: tableDataUrl}));
+                    break
+                case 'List Template':
+                    setCode(ListTemplateCode({ url: tableDataUrl}));
                     break
                 default:
                     setCode('');

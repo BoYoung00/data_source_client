@@ -5,7 +5,7 @@ const ComponentTemplateData = [
     },
     {
         title: "Board Template",
-        image: "https://via.placeholder.com/300x200",
+        image: "/template/image/web_photo/board_templatePhoto.png",
     },
 
 ];

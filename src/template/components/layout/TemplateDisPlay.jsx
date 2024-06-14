@@ -180,25 +180,38 @@ export default function TemplateDisPlay( { templateLabel , setDisplayOpen , choi
                 {templateStatus && //web
                     <div>
                         {(templateLabel === "SHOP Template") &&
-                            <Image
-                                src={"/template/image/web_photo/shop_templatePhoto.png"}
-                                style={
-                                    { width: "80%" ,
-                                        height :"auto" ,
-                                        boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)"
-                                    }}
-                            />
-
+                            <div>
+                                <Image
+                                    src={"/template/image/web_photo/shop_templatePhoto.png"}
+                                    style={
+                                        { width: "80%" ,
+                                            height :"auto" ,
+                                            boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)"
+                                        }}
+                                />
+                                <div>
+                                    <button className={styles.downloadButton}>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
                         }
                         {(templateLabel === "Board Template") &&
-                            <Image
-                                src={"/template/image/web_photo/board_templatePhoto.png"}
-                                style={
-                                    { width: "80%" ,
-                                        height :"auto" ,
-                                        boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)"
-                                    }}
-                            />
+                            <div>
+                                <Image
+                                    src={"/template/image/web_photo/board_templatePhoto.png"}
+                                    style={
+                                        { width: "80%" ,
+                                            height :"auto" ,
+                                            boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)"
+                                        }}
+                                />
+                                <div>
+                                    <button className={styles.downloadButton}>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
                         }
                     </div>
                 }
