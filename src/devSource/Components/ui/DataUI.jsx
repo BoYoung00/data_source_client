@@ -15,7 +15,9 @@ export default function DataUI({
     const [isHovered, setIsHovered] = useState(false);
     const fetchData = async () => {
         try {
-            const response = await fetch(`http://localhost:8080/api/column/comment/${column}/${tableID}`);
+            const apiUrl = process.env.REACT_APP_API_URL;
+
+            const response = await fetch(`${apiUrl}/api/column/comment/${column}/${tableID}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }

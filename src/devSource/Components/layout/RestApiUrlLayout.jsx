@@ -3,7 +3,27 @@ import stylesRest from "../../styleModule/restAPIBuilder.module.css";
 export default function RestApiUrlLayout({isExpanded=true , localPort , endpoint}) {
     let url = localPort + endpoint
     const handleCopyClick = (url) => {
-        navigator.clipboard.writeText(url); // 클립보드에 URL 복사
+        if (navigator.clipboard !== undefined) {
+            navigator.clipboard
+                .writeText(url)
+                .then(() => {
+                    alert('텍스트가 복사되었습니다.');
+                });
+        } else {
+            // execCommand 사용
+            const textArea = document.createElement('textarea');
+            textArea.value = `${url}`;
+            document.body.appendChild(textArea);
+            textArea.select();
+            textArea.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('복사 실패', err);
+            }
+            textArea.setSelectionRange(0, 0);
+            document.body.removeChild(textArea);
+        }
     };
 
     return (
