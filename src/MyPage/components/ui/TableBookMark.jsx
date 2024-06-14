@@ -8,7 +8,7 @@ export default function TableBookMark({favoriteTableResponses}) {
             <ul className={styles.ContextBoxProject}>
                 {favoriteTableResponses && favoriteTableResponses.map((data, index) => (
                     <li className={styles.liStyle}>
-                        <Link to={`/table/${data.id}`} className={styles.linkStyle}>
+                        <Link to={`/table/${data.databaseID}/${data.id}`} className={styles.linkStyle}>
                             <div className={styles.ListItemIcon}>
                                 <Image src={"image/database-table-icon.png"} className={styles.imageLogo}></Image>
                             </div>

@@ -20,7 +20,6 @@ export default function CreateProjectFormLayout() {
     const [success , setSuccess] = useState("")
     const [createDataBase, setCreateDataBase] = useState(null);
 
-
     const getCreateUser = async () => {
         const token = localStorage.getItem('token');
         const apiUrl = process.env.REACT_APP_API_URL;
