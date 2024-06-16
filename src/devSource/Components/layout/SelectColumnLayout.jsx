@@ -52,6 +52,11 @@ export default function SelectColumnLayout({ sendColumnData, setColumnList }) {
         setRows(updatedRows);
     }
 
+    useEffect(() => {
+        initialRowState.columnName = '';
+        setRows([initialRowState]);
+    }, []);
+
 
     useEffect(() => {
         setColumnList(rows);
