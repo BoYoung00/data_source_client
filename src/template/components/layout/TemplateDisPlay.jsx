@@ -20,6 +20,30 @@ export default function TemplateDisPlay( { templateLabel , setDisplayOpen , choi
     });
     const [selectedResultInputData , setSelectedResultInputData] = useState(null)
 
+    const downloadBtnClickEvent= (tmpName) =>{
+        switch (tmpName) {
+            case "SHOP Template":{
+                downloadFile("/template/nds_web_template/nds_shop.zip")
+                break
+            }
+            case "Board Template":{
+                downloadFile("/template/nds_web_template/nds_board.zip")
+                break
+            }
+            default:{
+                alert("해당 템플릿은 지원하지 않습니다.")
+            }
+        }
+    }
+    const downloadFile = (url) => {
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', ''); // 다운로드 속성 설정
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     // 템플릿 행 데이터 선택
     const setSelectedColumns = (selectedOptions) => {
         fetchInputTemplateData()
@@ -190,8 +214,8 @@ export default function TemplateDisPlay( { templateLabel , setDisplayOpen , choi
                                         }}
                                 />
                                 <div>
-                                    <button className={styles.downloadButton}>
-                                        Download
+                                    <button onClick={() => downloadBtnClickEvent(templateLabel)} className={styles.downloadButton}>
+                                        다운로드
                                     </button>
                                 </div>
                             </div>
@@ -207,8 +231,8 @@ export default function TemplateDisPlay( { templateLabel , setDisplayOpen , choi
                                         }}
                                 />
                                 <div>
-                                    <button className={styles.downloadButton}>
-                                        Download
+                                    <button onClick={() => downloadBtnClickEvent(templateLabel)} className={styles.downloadButton}>
+                                        다운로드
                                     </button>
                                 </div>
                             </div>

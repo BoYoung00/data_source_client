@@ -128,7 +128,7 @@ export default function ColumnUI({ columns , updateData , setUpdateData ,createD
                     setIsErrorModalOpen(true)
                 }
                 if (tableID.toString() === updateTable && dataUpdateUser === "APIBuilder"){
-                    setError("데이터베이스의 API 요청이 들어왔습니다.")
+                    setError("데이터베이스의 변경사항이 있습니다.")
                     setIsErrorModalOpen(true)
                 }
             });

@@ -7,7 +7,7 @@ export default function RestApiUrlLayout({isExpanded=true , localPort , endpoint
             navigator.clipboard
                 .writeText(url)
                 .then(() => {
-                    alert('텍스트가 복사되었습니다.');
+                    alert('URL 을 복사하였습니다.');
                 });
         } else {
             // execCommand 사용
